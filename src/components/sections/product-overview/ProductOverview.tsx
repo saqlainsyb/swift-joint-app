@@ -26,9 +26,7 @@ export const ProductOverview: React.FC<ProductOverviewProps> = ({
     <img
       src={imageSrc}
       alt={title}
-    //   width={300}
-    //   height={200}
-      className="bg-transparent h-full ml-[-70px] md:ml-0 mt-10 mr-0 md:mt-0 lg:mr-20 w-200"
+      className="bg-transparent h-full ml-[-70px] md:ml-0 mt-10 mr-0 md:mt-0 lg:mr-20 w-200 sm:w-140 lg:w-200"
     />
     <div className="text-white max-w-md lg:max-w-lg z-50 mt-10 my-16 lg:ml-20">
       <h3 className="text-md lg:text-2xl font-bold leading-5">SWIFT JOINT</h3>

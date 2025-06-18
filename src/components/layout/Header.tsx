@@ -74,12 +74,12 @@ export default function Header() {
         <Link to="/application" className="text-white hover:text-blue-500">
           App
         </Link>
-        <Link to="#about-us" className="text-white hover:text-blue-500">
+        <a href="#about-us" className="text-white hover:text-blue-500">
           About Us
-        </Link>
-        <Link to="#contact-us" className="text-white hover:text-blue-500">
+        </a>
+        <a href="#contact-us" className="text-white hover:text-blue-500">
           Contact
-        </Link>
+        </a>
       </nav>
 
       <div className="md:hidden flex items-center">

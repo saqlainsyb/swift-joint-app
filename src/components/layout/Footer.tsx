@@ -65,7 +65,7 @@ export default function Footer() {
             </Link>
           </div>
 
-          <div className="space-y-4 mt-4">
+          <div className="space-y-4 mt-4" id="contact-us">
             <h3 className="text-2xl font-semibold">Contact</h3>
             <p className="text-sm">
               <span className="font-semibold">Email: </span>info@swiftjoint.com
