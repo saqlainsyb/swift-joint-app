@@ -1,0 +1,47 @@
+name: Firebase Deploy
+
+on:
+  push:
+    branches:
+      - main  # Trigger deploy only on push to the main branch (change if you use a different branch)
+  pull_request:
+    branches:
+      - main  # Optionally deploy on PR to main (can be omitted if not needed)
+
+jobs:
+  deploy:
+    name: Deploy to Firebase
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Checkout the repository code
+      - name: Checkout code
+        uses: actions/checkout@v3
+      
+      # Set up Node.js (using the version from your project)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '22' # Adjust this version as per your project's requirements
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the Vite project
+      - name: Build the project
+        run: npm run build
+
+      # Install Firebase CLI
+      - name: Install Firebase CLI
+        run: npm install -g firebase-tools
+
+      # Authenticate Firebase using the service account secret
+      - name: Authenticate Firebase
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
+          firebase login:ci --token $(cat ${HOME}/firebase-service-account.json)
+
+      # Deploy to Firebase Hosting
+      - name: Deploy to Firebase
+        run: firebase deploy --only hosting --token $(cat ${HOME}/firebase-service-account.json)
