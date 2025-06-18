@@ -42,6 +42,7 @@ jobs:
           echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
           export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json
           /usr/bin/bash -e
+          echo "Authentication file created at: $GOOGLE_APPLICATION_CREDENTIALS"
 
       - name: Deploy to Firebase
         run: firebase deploy --only hosting --project swift-joint-feea3
