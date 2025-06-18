@@ -41,14 +41,7 @@ jobs:
         run: |
           echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
           export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json
+          /usr/bin/bash -e
 
-      # Select the appropriate project in firebase
-      - name: Set Active Firebase Project
-        run: firebase use --add swift-joint-feea3
-      # Deploy to Firebase Hosting
       - name: Deploy to Firebase
-        run: |
-          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
-          export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json
-          firebase deploy --only hosting
-        working-directory: .  # Adjust if your project is in a subdirectory
+        run: firebase deploy --only hosting --project swift-joint-feea3
