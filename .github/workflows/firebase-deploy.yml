@@ -40,7 +40,9 @@ jobs:
       - name: Authenticate Firebase
         run: |
           echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
+          export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json
           firebase deploy --only hosting --token $(cat ${HOME}/firebase-service-account.json)
+
 
 
       # Deploy to Firebase Hosting
