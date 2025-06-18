@@ -38,7 +38,11 @@ jobs:
 
       # Authenticate Firebase using the service account secret
       - name: Authenticate Firebase
-        run: echo "${{ secrets.FIREBASE_TOKEN }}" > ${HOME}/firebase-token.json
+        run: |
+          echo "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}" > ${HOME}/firebase-service-account.json
+          export GOOGLE_APPLICATION_CREDENTIALS=${HOME}/firebase-service-account.json
+          /usr/bin/bash -e
+          echo "Authentication file created at: $GOOGLE_APPLICATION_CREDENTIALS"
 
       - name: Deploy to Firebase
-        run: firebase deploy --only hosting --project swift-joint-feea3 --token $(cat ${HOME}/firebase-token.json)
+        run: firebase deploy --only hosting --project swift-joint-feea3
