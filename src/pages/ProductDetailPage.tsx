@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { productDetails } from "../data/productDetails";
 import ProductHero from "@/components/product-detail/ProductHero";
 import ProductDescription from "@/components/product-detail/ProductDescription";
@@ -20,9 +19,6 @@ export default function ProductDetailPage() {
 
   return (
     <>
-      <Helmet>
-        <title>{`${product.title} - Swift Joint`}</title>
-      </Helmet>
       <main>
         <ProductHero
           slug={productName!}
