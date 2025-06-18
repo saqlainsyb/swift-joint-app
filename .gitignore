@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+generate_gpt.ps1
+gpt-frontend.txt
