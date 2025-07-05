@@ -7,6 +7,7 @@ export interface ProductDetail {
   description: string;
   specsImage?: string;
   comparisonImage?: string;
+  comparisonPointers?: Array<string>;
   portability?: {
     title: string;
     mImage: string;
@@ -94,6 +95,7 @@ export const productDetails: ProductDetail[] = [
       "The Swift Joint Portable Lite 1 ensures faster deployment and efficiency...",
     specsImage: "/images/products/portable-lite1-specs.png",
     comparisonImage: "/images/products/portable-lite1-comparison.png",
+    comparisonPointers: ["Swift Joint machines are cost-effective, eliminating the need for fuel and transportation costs.", "Traditional machines require generators, increasing fuel and transport expenses significantly.", "Over 3 years, Swift Joint Lite saves over ₹8,00,000 INR."],
     portability : {
       title: "15 KG      vs      >55 KG",
       image: "/images/products/portable-lite1-portability.png",
@@ -118,6 +120,7 @@ export const productDetails: ProductDetail[] = [
       "Engineered for extreme durability and unmatched portability...",
     specsImage: "/images/products/portable-pro-max-specs.png",
     comparisonImage: "/images/products/portable-pro-max-comparison.png",
+    comparisonPointers: [" Swift Joint machines are cost-effective, eliminating the need for fuel and transportation costs.", "Traditional machines require generators, increasing fuel and transport expenses significantly.", "Over 3 years, Pro Max saves over ₹12,00,000 INR compared to traditional machines."],
     portability : {
       title: "35 KG      vs      >235 KG",
       image: "/images/products/portable-pro-max-portability.png",

@@ -29,7 +29,7 @@ export default function ProductDetailPage() {
         <ProductDescription title={product.title} />
         {product.specsImage && <ProductSpecs imageSrc={product.specsImage} />}
         {product.comparisonImage && (
-          <ProductComparison imageSrc={product.comparisonImage} />
+          <ProductComparison imageSrc={product.comparisonImage} pointers={product.comparisonPointers} />
         )}
         {product.portability && (
           <ProductPortability
